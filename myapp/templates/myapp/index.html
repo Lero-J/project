@@ -1,0 +1,20 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/style.css' %}">
+</head>
+<body>
+    <h2><a href="{% url 'contact.info' %}">Контакты</a></h2>
+
+    {% for course in courses%}
+        <a id="course" href="{% url 'course_info' course_id=course.id %}" style="text-decoration: none; font-size: 40px; text-shadow: 1px 1px 1px;"> {{course.id}} {{course.name}}</a>
+    <br>
+    <br>
+    {% endfor %}
+
+</body>
+</html>
